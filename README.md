@@ -75,13 +75,13 @@ sudo apt install virt-manager
 
 ![4_innervm_specs](https://user-images.githubusercontent.com/85700971/205465206-057c6326-3cc9-4653-9743-cfff4e069701.png)
 
-    We can see the 32-bit inner VM in the screenshot below,
+ We can see the 32-bit inner VM in the screenshot below,
 
 ![5_Screenshot_innervm](https://user-images.githubusercontent.com/85700971/205465239-e1420982-da06-4241-b63e-1d833caef6d1.png)
 
 
 
-Next, we can download a test program to test the cpuid leaf nodes but downloading cpuid from,
+* Next, we can download a test program to test the cpuid leaf nodes but downloading cpuid from,
 http://archive.ubuntu.com/ubuntu/pool/universe/c/cpuid/cpuid_20170122.orig.tar.gz
 Once the archive is extracted we can navigate to the extracted directory and run the make command to build the program.
 
@@ -100,7 +100,7 @@ Here, the leaf node is specified with “-l” argument.
 
 We see the total number of exit counts increasing and the values are returned in the eax register. The leafnode and the increasing exit counts are highlighted in the screenshot above.
 
-The check the Total time taken to process these exits we can run the cpuid command with leadnode 0x4FFFFFFD with command below,
+* To check the Total time taken to process these exits we can run the cpuid command with leadnode 0x4FFFFFFD with command below,
 
 ![7_Output_leaf_0x4ffffffd](https://user-images.githubusercontent.com/85700971/205465303-c84fbda4-26fe-44c5-9868-8975bfcefd26.png)
 
