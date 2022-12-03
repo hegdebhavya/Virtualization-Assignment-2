@@ -67,8 +67,9 @@ sudo update-grub
 I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen here.
 
 To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
-
+```
 sudo apt install virt-manager
+```
 
 Once virt-manager is installed we can create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
 
@@ -86,7 +87,11 @@ Once the archive is extracted we can navigate to the extracted directory and run
 
 The check the Total number of Exits we can run the cpuid command with leadnode 0x4FFFFFFC with command below,
 
+```
+
 ./cpuid -l 0x4ffffffc    
+
+```
 
 Here, the leaf node is specified with “-l” argument.
 
