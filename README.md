@@ -11,9 +11,9 @@ Modify the CPUID emulation code in KVM to report back additional information whe
 
 Following are the development steps I have followed to develop the solution for assignment-2:  Adding leaf nodes 0x4ffffffc and 0x4ffffffd to the CPUID emulation code in KVM.
 
-** I have forked the Linux Kernel  https://github.com/torvalds/linux.git  to me GitHub account
+**I have forked the Linux Kernel  https://github.com/torvalds/linux.git  to me GitHub account
 
-** Checkout the linux kernel code from my github repository 
+**Checkout the linux kernel code from my github repository 
                        git clone https://github.com/hegdebhavya/linux.git 
 
 The new kernel code that is checked-out here is **6.1.0-rc6+**
