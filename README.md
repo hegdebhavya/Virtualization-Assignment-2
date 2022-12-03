@@ -21,7 +21,7 @@ Following are the development steps I have followed to develop the solution for 
 ![1_Linux_repo_Checkout](https://user-images.githubusercontent.com/85700971/205465167-2a3b5eb1-6a2f-4c2b-b249-a8bfbdc8ad08.png)
 
 
-         The current Linux Kernel version is as below,
+ The current Linux Kernel version is as below,
 
 ![2_Current_Liux_Version](https://user-images.githubusercontent.com/85700971/205465173-c2a1e955-7a6d-4165-b528-a1751448835f.png)
 
