@@ -43,7 +43,9 @@ make xconfig
 ```
 
 * I have selected the default options for xconfig. Once this command is executed we start the make process
- 	make
+ ``` 
+ make
+ ```
 
 Once the make is complete, 
 ```
