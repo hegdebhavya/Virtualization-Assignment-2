@@ -29,23 +29,27 @@ The current Linux Kernel version is as below,
 Fig: 2_Linux_version
 
 We now install all the libraries and tools we would need to build the new Linux Kernel.
-'''
+
+```
 sudo apt install gcc make bison flex pkg-config 
 sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools g++ libelf-dev
 
-'''
+```
 
 Next we make the config file for our kernel build 
 
+```
 make xconfig
+```
 
 I have selected the default options for xconfig. Once this command is executed we start the make process
  	make
 
 Once the make is complete, 
+```
 sudo make modules_install
 sudo make install
-
+```
 Next, we configure the grub loader, to check the exact kernel version name you can navigate to the /lib/modules directory and get the version, with this you can the commands below, 
 
 ![3_GRUB_config](https://user-images.githubusercontent.com/85700971/205465182-5cfcefa6-3828-4c55-884c-dbe554d54d67.png)
@@ -53,8 +57,12 @@ Next, we configure the grub loader, to check the exact kernel version name you c
 
 Fig3_GRUB_config
 
+```
+
 sudo update-initramfs -c -k 6.1.0-rc6+
 sudo update-grub
+
+```
 
 I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen here.
 
