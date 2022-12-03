@@ -16,19 +16,19 @@ Following are the development steps I have followed to develop the solution for 
 * Checkout the linux kernel code from my github repository 
                        git clone https://github.com/hegdebhavya/linux.git 
 
-The new kernel code that is checked-out here is **6.1.0-rc6+**
+         The new kernel code that is checked-out here is **6.1.0-rc6+**
 
 ![1_Linux_repo_Checkout](https://user-images.githubusercontent.com/85700971/205465167-2a3b5eb1-6a2f-4c2b-b249-a8bfbdc8ad08.png)
 
 
-The current Linux Kernel version is as below,
+         The current Linux Kernel version is as below,
 
 ![2_Current_Liux_Version](https://user-images.githubusercontent.com/85700971/205465173-c2a1e955-7a6d-4165-b528-a1751448835f.png)
 
 
-Fig: 2_Linux_version
 
-We now install all the libraries and tools we would need to build the new Linux Kernel.
+
+* We now install all the libraries and tools we would need to build the new Linux Kernel.
 
 ```
 sudo apt install gcc make bison flex pkg-config 
@@ -36,13 +36,13 @@ sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools g++ libel
 
 ```
 
-Next we make the config file for our kernel build 
+* Next we make the config file for our kernel build 
 
 ```
 make xconfig
 ```
 
-I have selected the default options for xconfig. Once this command is executed we start the make process
+* I have selected the default options for xconfig. Once this command is executed we start the make process
  	make
 
 Once the make is complete, 
@@ -50,7 +50,7 @@ Once the make is complete,
 sudo make modules_install
 sudo make install
 ```
-Next, we configure the grub loader, to check the exact kernel version name you can navigate to the /lib/modules directory and get the version, with this you can the commands below, 
+* Next, we configure the grub loader, to check the exact kernel version name you can navigate to the /lib/modules directory and get the version, with this you can the commands below, 
 
 ![3_GRUB_config](https://user-images.githubusercontent.com/85700971/205465182-5cfcefa6-3828-4c55-884c-dbe554d54d67.png)
 
@@ -64,18 +64,18 @@ sudo update-grub
 
 ```
 
-I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen here.
+  * I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen here.
 
-To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
+* To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
 ```
 sudo apt install virt-manager
 ```
 
-Once virt-manager is installed we can create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
+* Once virt-manager is installed we can create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
 
 ![4_innervm_specs](https://user-images.githubusercontent.com/85700971/205465206-057c6326-3cc9-4653-9743-cfff4e069701.png)
 
-We can see the 32-bit inner VM in the screenshot below,
+    We can see the 32-bit inner VM in the screenshot below,
 
 ![5_Screenshot_innervm](https://user-images.githubusercontent.com/85700971/205465239-e1420982-da06-4241-b63e-1d833caef6d1.png)
 
