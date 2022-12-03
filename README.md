@@ -4,8 +4,10 @@ Modify the CPUID emulation code in KVM to report back additional information whe
 
  ### Implementation on  leafs 0x4FFFFFFC and 0x4FFFFFFD <br>
  
+ ### Question 2: 
+ 
  #### Steps used to complete this assignment :
-This is an individual submission.
+
 
 Following are the development steps I have followed to develop the solution for assignment-2:  Adding leaf nodes 0x4ffffffc and 0x4ffffffd to the CPUID emulation code in KVM.
 
@@ -27,9 +29,11 @@ The current Linux Kernel version is as below,
 Fig: 2_Linux_version
 
 We now install all the libraries and tools we would need to build the new Linux Kernel.
-
+'''
 sudo apt install gcc make bison flex pkg-config 
 sudo apt-get install qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools g++ libelf-dev
+
+'''
 
 Next we make the config file for our kernel build 
 
