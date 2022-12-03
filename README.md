@@ -47,7 +47,7 @@ make xconfig
  make
  ```
 
-Once the make is complete, 
+* Once the make is complete, 
 ```
 sudo make modules_install
 sudo make install
@@ -57,7 +57,7 @@ sudo make install
 ![3_GRUB_config](https://user-images.githubusercontent.com/85700971/205465182-5cfcefa6-3828-4c55-884c-dbe554d54d67.png)
 
 
-Fig3_GRUB_config
+
 
 ```
 
