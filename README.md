@@ -16,7 +16,7 @@ Following are the development steps I have followed to develop the solution for 
 * Checkout the linux kernel code from my github repository 
                        git clone https://github.com/hegdebhavya/linux.git 
 
-         The new kernel code that is checked-out here is **6.1.0-rc6+**
+ The new kernel code that is checked-out here is **6.1.0-rc6+**
 
 ![1_Linux_repo_Checkout](https://user-images.githubusercontent.com/85700971/205465167-2a3b5eb1-6a2f-4c2b-b249-a8bfbdc8ad08.png)
 
