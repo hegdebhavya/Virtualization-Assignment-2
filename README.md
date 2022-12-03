@@ -7,7 +7,7 @@
  
  ### Question 2: 
  
- #### Steps used to complete this assignment :
+ #### Steps used to complete this assignment : ---
 
 
 Following are the development steps I have followed to develop the solution for assignment-2:  Adding leaf nodes 0x4ffffffc and 0x4ffffffd to the CPUID emulation code in KVM.
