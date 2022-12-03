@@ -64,7 +64,7 @@ sudo update-grub
 
 ```
 
-  * I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen here.
+  * I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen https://github.com/hegdebhavya/linux/commit/b0f1c18a54b1e92549034ab453affeccfb367bf0.
 
 * To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
 ```
