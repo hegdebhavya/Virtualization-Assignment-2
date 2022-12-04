@@ -53,11 +53,7 @@ make xconfig
 sudo make modules_install
 sudo make install
 ```
-* Next, we configure the grub loader, to check the exact kernel version name you can navigate to the /lib/modules directory and get the version, with this you can the commands below, 
-
-![3_GRUB_config](https://user-images.githubusercontent.com/85700971/205465182-5cfcefa6-3828-4c55-884c-dbe554d54d67.png)
-
-
+* Next, we configure the grub loader, to check the exact kernel version name you can navigate to the /lib/modules directory and get the version, with this you can run commands below, 
 
 
 ```
@@ -66,6 +62,12 @@ sudo update-initramfs -c -k 6.1.0-rc6+
 sudo update-grub
 
 ```
+
+![3_GRUB_config](https://user-images.githubusercontent.com/85700971/205465182-5cfcefa6-3828-4c55-884c-dbe554d54d67.png)
+
+
+
+
 * Next, we reboot the system and run “uname -r” to check the new linux kernel version
 
 ![8_Linux_Kernel_New_version](https://user-images.githubusercontent.com/85700971/205470726-bf50c73c-5bbe-4e6c-872c-ad25e5df5504.png)
