@@ -74,7 +74,7 @@ sudo update-grub
 sudo apt install virt-manager
 ```
 
-* Once virt-manager is installed we can create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
+* Once virt-manager is installed we can launch the virtual machine manager by running command “virt-manager” create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
 
 ![4_innervm_specs](https://user-images.githubusercontent.com/85700971/205465206-057c6326-3cc9-4653-9743-cfff4e069701.png)
 
