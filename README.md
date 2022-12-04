@@ -12,7 +12,7 @@
 
 Following are the development steps I have followed to develop the solution for assignment-2:  Adding leaf nodes 0x4ffffffc and 0x4ffffffd to the CPUID emulation code in KVM.
 
-* I have forked the Linux Kernel  https://github.com/torvalds/linux.git  
+* Fork the Linux Kernel  https://github.com/torvalds/linux.git  
 
 * Checkout the linux kernel code from my github repository 
                        git clone https://github.com/hegdebhavya/linux.git 
