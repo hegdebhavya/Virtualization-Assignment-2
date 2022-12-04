@@ -68,7 +68,7 @@ sudo update-grub
 
 
 
-* Next, we reboot the system and run “uname -r” to check the new linux kernel version
+* Next, we reboot the system and run **uname -r** to check the new linux kernel version
 
 ![8_Linux_Kernel_New_version](https://user-images.githubusercontent.com/85700971/205470726-bf50c73c-5bbe-4e6c-872c-ad25e5df5504.png)
 
