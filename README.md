@@ -66,8 +66,38 @@ sudo update-initramfs -c -k 6.1.0-rc6+
 sudo update-grub
 
 ```
+* Next, we reboot the system and run “uname -r” to check the new linux kernel version
 
-  *  Modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen [b0f1c18]
+![8_Linux_Kernel_New_version](https://user-images.githubusercontent.com/85700971/205470726-bf50c73c-5bbe-4e6c-872c-ad25e5df5504.png)
+
+
+
+We observe that the Linux version has been upgraded to **6.1.0-rc6+** from the previous **5.15.0-53-generic**.
+
+  *  Next, I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen [b0f1c18]
+
+* After the files are modified we build the modules again by running following commands
+
+```
+make modules
+```
+![10_makemodule](https://user-images.githubusercontent.com/85700971/205470767-bc6913fa-17de-4c68-8b07-55f699e6bfe9.png)
+
+* Once make completes please install the modules using command below,
+```
+make INSTALL_MOD_STRIP=1 modules_install
+```
+
+* We then reload the kvm modules using following commands
+```
+sudo rmmod kvm_intel
+sudo rmmod kvm
+sudo modprobe kvm_intel
+sudo modprobe kvm
+```
+
+![9_modulereload](https://user-images.githubusercontent.com/85700971/205470806-5e1e4330-1c56-4991-9b67-5644c654af18.png)
+
 
 * To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
 ```
