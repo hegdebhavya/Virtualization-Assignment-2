@@ -1,5 +1,9 @@
 # CMPE283-Assignment-2 <br>
 
+Student Name : Bhavya Hegde <br>
+email : bhavya.hegde@sjsu.edu
+
+
 ## Modify the CPUID emulation code in KVM to report back additional information when special CPUID leaf nodes are requested. 
 
  ### Implementation of CPUID leaf nodes 0x4FFFFFFC and 0x4FFFFFFD <hr style="border:2px solid gray">
@@ -76,7 +80,7 @@ sudo update-grub
 
 We observe that the Linux version has been upgraded to **6.1.0-rc6+** from the previous **5.15.0-53-generic**.
 
-  *  Next, I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen [b0f1c18]
+  *  Next, I have modified the files /linux/arch/x86/kvm/cpuid.c and /linux/arch/x86/kvm/vmx/vmx.c to add the required variables and logic to add support for cpuid leaf nodes 0x4ffffffc and 0x4ffffffd. These changes are committed to the current GitHub repository and commits can be seen [here](https://github.com/hegdebhavya/linux/commit/b0f1c18a54b1e92549034ab453affeccfb367bf0)
 
 * After the files are modified we build the modules again by running following commands
 
@@ -101,12 +105,12 @@ sudo modprobe kvm
 ![9_modulereload](https://user-images.githubusercontent.com/85700971/205470806-5e1e4330-1c56-4991-9b67-5644c654af18.png)
 
 
-* To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual 
+* To test the cpuid modifications we will now install virt-manager and run a 32-bit Ubuntu Virtual machine
 ```
 sudo apt install virt-manager
 ```
 
-* Once virt-manager is installed we can launch the virtual machine manager by running command **virt-manager** create a new 32-bit  Ubuntu VM in my case I have tested with Ubuntu 
+* Once virt-manager is installed we can launch the virtual machine manager by running command **virt-manager** ;  create a new 32-bit VM in my case I have tested with Ubuntu 
 
 ![4_innervm_specs](https://user-images.githubusercontent.com/85700971/205465206-057c6326-3cc9-4653-9743-cfff4e069701.png)
 
@@ -116,11 +120,14 @@ sudo apt install virt-manager
 
 
 
-* Next, we can download a test program to test the cpuid leaf nodes but downloading cpuid from,
-http://archive.ubuntu.com/ubuntu/pool/universe/c/cpuid/cpuid_20170122.orig.tar.gz
-Once the archive is extracted we can navigate to the extracted directory and run the make command to build the program.
+* Next, we can download a test program to test the cpuid leaf nodes by downloading cpuid from,
+http://archive.ubuntu.com/ubuntu/pool/universe/c/cpuid/cpuid_20170122.orig.tar.gz into this new 32-bit Ubuntu VM 
 
-The check the Total number of Exits we can run the cpuid command with leadnode 0x4FFFFFFC with command below,
+* Once the archive is extracted we can navigate to the extracted directory and run the make command to build the program.
+
+ ## Output  
+
+* To check the Total number of Exits we can run the cpuid command with leadnode 0x4FFFFFFC with command below,
 
 ```
 
@@ -135,7 +142,13 @@ Here, the leaf node is specified with “-l” argument.
 
 We see the total number of exit counts increasing and the values are returned in the eax register. The leafnode and the increasing exit counts are highlighted in the screenshot above.
 
-* To check the Total time taken to process these exits we can run the cpuid command with leadnode 0x4FFFFFFD with command below,
+* To check the Total time taken to process these exits we can run the cpuid command with leafnode 0x4FFFFFFD with command below,
+
+```
+
+./cpuid -l 0x4ffffffd    
+
+```
 
 ![7_Output_leaf_0x4ffffffd](https://user-images.githubusercontent.com/85700971/205465303-c84fbda4-26fe-44c5-9868-8975bfcefd26.png)
 
